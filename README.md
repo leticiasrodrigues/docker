@@ -25,3 +25,14 @@ Processo segregado com seu próprio sistema de arquivos separado da máquina hos
 Chroot é um comando para redefinir a pasta raiz para um determinando processo. 'Aprisiona' o processo a essa pasta raiz e não tem acesso a outras pastas do sistemas.
 
 VM é o outro extremo, onde o isolamento é completo, inclusive do SO.
+
+** O que são imagens? **
+Modelo de sistema de arquivos somente leitura usado para criar um container.
+
+Container esta associado ao processo e a imagem é um arquivo que monta o sistema de arquivos que o container terá acesso.
+
+Imagens são criadas a partir de um processo chamado build. Um descritor que sempre vai gerar uma mesma imagem.
+
+Sistema de registro de imagens - ex docker hub. Cada repositório pode ter varias imagens diferencias a partir de tags.
+
+São compostos por uma ou mais camadas/layers. Uma camada representa uma ou mais mudanças no sistema de arquivo. Uma camada é também chamada de imagem intermediária. A junção dessas camadas forma a imagem. Apenas a última camada pode ser alterada quando o container for iniciado. Essa ultima camada é justamente criada quando o container é iniciado. O grande objetivo dessa estratégia é o reuso.
