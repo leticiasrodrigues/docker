@@ -26,7 +26,9 @@ Chroot é um comando para redefinir a pasta raiz para um determinando processo. 
 
 VM é o outro extremo, onde o isolamento é completo, inclusive do SO.
 
-** O que são imagens? **
+O isolamento do container é feita de modo controlado. Isso quer dizer que é possível controlar o que é compartilhado ou não. É possível mapear alguma porta ou até compartilhar pastas inteiras do host com o container.
+
+**O que são imagens?**
 Modelo de sistema de arquivos somente leitura usado para criar um container.
 
 Container esta associado ao processo e a imagem é um arquivo que monta o sistema de arquivos que o container terá acesso.
