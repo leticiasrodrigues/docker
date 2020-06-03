@@ -14,9 +14,23 @@ docker image tag redis:latest cod3r-redis
 
 ## Primeiro build
 FROM
- - A imagem para ser baseada
+  - A imagem para ser baseada
 RUN
- - Adiciona uma layer à imagem base
+  - Adiciona uma layer à imagem base
+  - cada comando é uma nova layer
 docker image build -t ex-simple-build:latest .
- - t: tag da imagem a ser criada
- - cria uma imagem a partir de um Dockerfile
+  - t: tag da imagem a ser criada
+  - cria uma imagem a partir de um Dockerfile
+
+## Build com argumentos
+
+docker image build -t ex-build-arg .
+docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
+  - Criando a imagem sem o argumento
+
+docker image build --build-arg S3_BUCKET=myapp -t ex-build-arg .
+docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
+  - Agora vemos o argumento passado na criação da imagem
+
+docker image inspect --format="{{index .Config.Labels \"maintener\}}" ex-build-arg
+  - Vendo alguma informação específica da imagem
