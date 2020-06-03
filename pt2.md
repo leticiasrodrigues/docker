@@ -34,3 +34,5 @@ docker container run ex-build-arg bash -c 'echo $S3_BUCKET'
 
 docker image inspect --format="{{index .Config.Labels \"maintener\}}" ex-build-arg
   - Vendo alguma informação específica da imagem
+
+## Build com copy
