@@ -1,0 +1,8 @@
+version: '3'
+services:
+  email_exercise_db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_DB: email_exercise_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
