@@ -18,5 +18,8 @@ Para checar, criamos um arquivo que executa alguns comandos no banco de dados, t
 
 ## 3. Frontend
 Criar o serviço de frontend para o projeto.
-Diferente do proposto do curso, foi criado um frontend usando Vue.js, com as seguintes referências:
+Diferente do proposto do curso, foi criado um frontend usando Vue.js, com a seguinte referência:
 - https://www.freecodecamp.org/news/how-to-create-a-vue-js-app-using-single-file-components-without-the-cli-7e73e5b8244f/
+
+## 4. Backend
+Cria um serviço em python que vai executar as operação pedidas pelo frontend. Por enquanto o frontend se conecta diretamente com o backend, portanto ele precisa ter a porta da aplicação aberta, disponível. Posteriormente será adicionado um proxy, garantindo um pouco mais de segurança.

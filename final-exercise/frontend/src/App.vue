@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>E-mail Sender</h1>
-    <form action="">
+    <form action="http://localhost:3000" method="POST">
       <div>
         <label for="subject">Subject</label>
         <input type="text" name="subject">
@@ -11,7 +11,7 @@
         <textarea name="mensage" rows="6" cols="50"></textarea>
       </div>
       <div>
-        <button type="button">Sent</button>
+        <button type="submit">Sent</button>
       </div>
     </form>
   </div>
