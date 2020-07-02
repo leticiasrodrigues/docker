@@ -26,3 +26,6 @@ Cria um serviço em python que vai executar as operação pedidas pelo frontend.
 
 ## 5. Proxy reverso
 Usando o nginx, será a porta de entrada para a aplicação, tanto frontend quanto backend. Dessa forma, nenhuma das duas precisa deixar nenhuma porta exposta.
+
+## 6. Redes
+Adiciona mais uma camada de isolamento, assim nem os próprios containers têm acesso uns aos outros a não ser que isso seja necessário.
