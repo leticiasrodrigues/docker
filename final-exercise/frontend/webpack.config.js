@@ -13,6 +13,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
+    public: 'frontend',
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>E-mail Sender</h1>
-    <form action="http://localhost:3000" method="POST">
+    <form action="http://localhost/api" method="POST">
       <div>
         <label for="subject">Subject</label>
         <input type="text" name="subject">

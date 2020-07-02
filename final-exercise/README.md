@@ -23,3 +23,6 @@ Diferente do proposto do curso, foi criado um frontend usando Vue.js, com a segu
 
 ## 4. Backend
 Cria um serviço em python que vai executar as operação pedidas pelo frontend. Por enquanto o frontend se conecta diretamente com o backend, portanto ele precisa ter a porta da aplicação aberta, disponível. Posteriormente será adicionado um proxy, garantindo um pouco mais de segurança.
+
+## 5. Proxy reverso
+Usando o nginx, será a porta de entrada para a aplicação, tanto frontend quanto backend. Dessa forma, nenhuma das duas precisa deixar nenhuma porta exposta.

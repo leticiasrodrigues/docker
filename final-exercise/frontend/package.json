@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "serve": "webpack-dev-server --mode development --host 0.0.0.0"
+    "serve": "node_modules/.bin/webpack-dev-server --mode development --host 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
