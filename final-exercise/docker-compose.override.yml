@@ -1,0 +1,5 @@
+version: '3'
+services:
+  worker:
+    environment:
+      WORKER_REDIS_HOST: queue

@@ -10,13 +10,13 @@ class Sender(Bottle):
         super().__init__()
         self.route('/', method='POST', callback=self.send)
 
-        redis_host = os.getenv('REDIS_HOST', 'queue')
+        redis_host = os.getenv('APP_REDIS_HOST', '')
         self.fila = redis.StrictRedis(host=redis_host, port=6379, db=0)
 
-        db_host = os.getenv('POSTGRES_HOST', 'email_exercise_db')
-        db_user = os.getenv('POSTGRES_USER', 'postgres')
-        db_name = os.getenv('DB_NAME', 'email_sender')
-        db_password = os.getenv('POSTGRES_PASSWORD', 'password')
+        db_host = os.getenv('APP_POSTGRES_HOST', '')
+        db_user = os.getenv('APP_POSTGRES_USER', '')
+        db_name = os.getenv('APP_DB_NAME', '')
+        db_password = os.getenv('APP_POSTGRES_PASSWORD', '')
         dsn = f'dbname={db_name} user={db_user} host={db_host} password={db_password}'
         self.conn = psycopg2.connect(dsn)
 
