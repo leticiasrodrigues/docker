@@ -33,3 +33,10 @@ Adiciona mais uma camada de isolamento, assim nem os próprios containers têm a
 ## 7. Workers
 Os emails não serão efetivamente enviados, mas o worker simula onde isso aconteceria em uma situação real. A mensagem é tanto registrada no banco quanto enviada para uma fila implementado com redis, que será consumida pelo worker. Para ver as mensagens enviadas, basta olhar as entradas no banco de dados.
 `docker-compose exec email_exercise_db psql -U postgres -d email_sender -c "SELECT * FROM emails;`
+
+## 8. Múltiplas instâncias
+Até então, todas as imagens usadas já estavam prontas. Agora, vamos criar uma imagem para poder personalizar o worker, usando o Dockerfile.
+- PYTHONUNBUFFERED: variável de ambiente do python que vai permitir ver os logs de maneira síncrona, sem usar o buffer.
+Escalando um dos serviços: `docker-compose up -d --scale worker=3`
+Vendo os logs específicos de um serviço: `docker-compose logs -f -t worker`
+Veremos que há três containers diferentes, com um sulfixo numérico. Vários processos paralelos.
