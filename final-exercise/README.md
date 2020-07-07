@@ -29,3 +29,7 @@ Usando o nginx, será a porta de entrada para a aplicação, tanto frontend quan
 
 ## 6. Redes
 Adiciona mais uma camada de isolamento, assim nem os próprios containers têm acesso uns aos outros a não ser que isso seja necessário.
+
+## 7. Workers
+Os emails não serão efetivamente enviados, mas o worker simula onde isso aconteceria em uma situação real. A mensagem é tanto registrada no banco quanto enviada para uma fila implementado com redis, que será consumida pelo worker. Para ver as mensagens enviadas, basta olhar as entradas no banco de dados.
+`docker-compose exec email_exercise_db psql -U postgres -d email_sender -c "SELECT * FROM emails;`
